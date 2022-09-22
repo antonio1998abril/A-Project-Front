@@ -1,0 +1,136 @@
+const onLine = process.env.REACT_APP_BASE || process.env.REACT_APP_API_URL;
+
+module.exports = {
+  reactStrictMode: false,
+  images: {
+    domains: ["res.cloudinary.com"],
+  },
+  async rewrites() {
+    return [
+      /* Image */
+      {
+        source: "/api/upload",
+        destination: `${onLine}/upload`,
+      },
+      {
+        source: "/api/destroy",
+        destination: `${onLine}/destroy`,
+      },
+      {
+        source: "/api/register",
+        destination: `${onLine}/register`,
+      },
+      {
+        source: "/api/refresh_token",
+        destination: `${onLine}/refresh_token`,
+      },
+      {
+        source: "/api/login",
+        destination: `${onLine}/login`,
+      },
+      {
+        source: "/api/logout",
+        destination: `${onLine}/logout`,
+      },
+      {
+        source: "/api/role",
+        destination: `${onLine}/role`,
+      },
+      {
+        source: "/api/newPassword",
+        destination: `${onLine}/newPassword`,
+      },
+      {
+        source: "/api/info",
+        destination: `${onLine}/info`,
+      },
+      /* Admin */
+      {
+        source: "/api/registerNewUser",
+        destination: `${onLine}/registerNewUser`,
+      },
+      {
+        source: "/api/getAllUser",
+        destination: `${onLine}/getAllUser`,
+      },
+      {
+        source: "/api/deleteUserAccount/:id",
+        destination: `${onLine}/deleteUserAccount/:id`,
+      },
+      {
+        source: "/api/updateAccount/:id",
+        destination: `${onLine}/updateAccount/:id`,
+      },
+        /* Collaborator */
+      {
+        source: "/api/getCollaboratorInfo/:id",
+        destination: `${onLine}/getCollaboratorInfo/:id`,
+      },
+      /* Task */
+      {
+        source: "/api/newTask",
+        destination: `${onLine}/newTask`,
+      }, {
+        source: "/api/getTask/:id",
+        destination: `${onLine}/getTask/:id`,
+      },
+      {
+        source: "/api/updateTask/:id",
+        destination: `${onLine}/updateTask/:id`,
+      },
+      {
+        source: "/api/deleteTask/:id",
+        destination: `${onLine}/deleteTask/:id`,
+      },
+      /* Client */
+      {
+        source: "/api/newTechLead",
+        destination: `${onLine}/newTechLead`,
+      },
+      {
+        source: "/api/getTechLead/:id",
+        destination: `${onLine}/getTechLead/:id`,
+      },
+      {
+        source: "/api/updateTechLead/:id",
+        destination: `${onLine}/updateTechLead/:id`,
+      },
+      {
+        source: "/api/deleteTechLead/:id",
+        destination: `${onLine}/deleteTechLead/:id`,
+      },
+      {
+        source: "/api/newManager",
+        destination: `${onLine}/newManager`,
+      },
+      {
+        source: "/api/getManager/:id",
+        destination: `${onLine}/getManager/:id`,
+      },
+      {
+        source: "/api/updateManager/:id",
+        destination: `${onLine}/updateManager/:id`,
+      },
+      {
+        source: "/api/deleteManager/:id",
+        destination: `${onLine}/deleteManager/:id`,
+      },
+      {
+        source: "/api/newClient",
+        destination: `${onLine}/newClient`,
+      },
+      {
+        source: "/api/getClient/:id",
+        destination: `${onLine}/getClient/:id`,
+      },
+      {
+        source: "/api/updateClient/:id",
+        destination: `${onLine}/updateClient/:id`,
+      },
+      {
+        source: "/api/deleteClient/:id",
+        destination: `${onLine}/deleteClient/:id`,
+      },
+    ];
+  },
+};
