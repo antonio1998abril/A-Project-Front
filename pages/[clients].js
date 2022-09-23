@@ -12,23 +12,26 @@ import { clientService } from "../service/clientService";
 import DeleteClient from "../components/ModalComponents/Client/Options/DeleteClient";
 
 function Clients() {
+  const router = useRouter();
   const state = useContext(AuthContext);
   const [callback, setCallback] = state.User.callback;
   const [infoModal, setInfoModal] = useState(false);
   const [itemMT, setItemMT] = useState();
   const [client, setClients] = useState([]);
   const { getClientList } = clientService();
+  /*   const [userId] = state.User.userId */
 
   useEffect(() => {
     const getClient = async () => {
-      const res = await getClientList();
+      const res = await getClientList(router?.query?.keyword);
       setClients(res.data);
     };
 
     setTimeout(() => {
       getClient();
-    }, 1000);
-  }, [callback]);
+    }, 500);
+  }, []);
+
   return (
     <>
       <br />
