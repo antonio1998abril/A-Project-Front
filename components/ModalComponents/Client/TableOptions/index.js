@@ -1,6 +1,6 @@
 import React from "react";
 
-function index() {
+function index({item}) {
   return (
     <td>
       <div className="text-center">
