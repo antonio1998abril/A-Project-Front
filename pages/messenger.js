@@ -7,7 +7,7 @@ import io from "Socket.IO-client";
 import axios from "axios";
 socket = io();
 
-function messenger() {
+function Messenger() {
   const state = useContext(AuthContext);
   const [itemsDashBoard, setItemsDashBoard] = state.User.itemsDashBoard;
   const [message, setMessage] = useState("");
@@ -198,4 +198,4 @@ function messenger() {
   );
 }
 
-export default messenger;
+export default Messenger;
