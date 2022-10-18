@@ -27,7 +27,13 @@ function User(token) {
   const [result, setResult] = useState(0);
 
   const [enableSideBar,setEnableSideBar] = useState(false);
+
   /* Serch functionality */
+
+  /* Notifications */
+
+
+  
 
   useEffect(() => {
     if (token) {
@@ -40,9 +46,6 @@ function User(token) {
            (res.data?.role === "Manager" && setIsManager(true)) ||
             (res.data?.role === "Admin" && setIsAdmin(true)) ||
             (res.data?.role === "Collaborator" && setIsCollaborator(true));
-
-     
-      
           setUserId(res.data?._id);
         } catch (err) {
           localStorage.removeItem("firstLogin");
@@ -85,7 +88,9 @@ function User(token) {
     itemsDashBoard: [itemsDashBoard, setItemsDashBoard],
     userId: [userId],
     result: [result],
-    enableSideBar:[enableSideBar,setEnableSideBar]
+    enableSideBar:[enableSideBar,setEnableSideBar],
+
+
   };
 }
 export default User;
