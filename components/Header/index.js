@@ -40,6 +40,20 @@ function Index() {
     if (enableSideBar) setEnableSideBar(false);
     if (!enableSideBar) setEnableSideBar(true);
   };
+  const style = {
+    marginTop:'8px',
+  }
+
+  const home = () => {
+    Router.push("/DashboardSession");
+  };
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    Router.push("/InfoClient");
+  };
+
+
 
   const sentToMessenger = () => {
     Router.push("/messenger");
@@ -93,14 +107,24 @@ function Index() {
                 A-Project
               </Navbar.Brand>
 
-              <Nav.Link href="/" className="fontNavBar ">
+              <Nav.Link href="/DashboardSession" onClick={home} className="fontNavBar ">
                 Home
               </Nav.Link>
               {isManager && (
                 <>
-                  <Nav.Link href="/InfoClient" className="fontNavBar ">
+                <br/>
+                <br/>
+                  <span
+                    type="submit"
+                    onClick={handleClick}
+                    className="fontNavBar"
+                    style={style}
+                  >
                     Clients
-                  </Nav.Link>
+                  </span>
+                  {/*  <Nav.Link href="/InfoClient" className="fontNavBar ">
+                    Clients
+                  </Nav.Link> */}
                 </>
               )}
 
@@ -109,9 +133,9 @@ function Index() {
                 id="collapsable-nav-dropdown"
                 className="fontNavBar "
               >
-                <NavDropdown.Item href="#action/3.3" className="fontNavBar ">
+              {/*   <NavDropdown.Item href="#action/3.3" className="fontNavBar ">
                   Settings
-                </NavDropdown.Item>
+                </NavDropdown.Item> */}
                 <NavDropdown.Divider />
                 <NavDropdown.Item onClick={logoutUser} className="fontNavBar ">
                   Log out
